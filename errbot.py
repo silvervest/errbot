@@ -2,13 +2,27 @@
 import csv
 import re
 import discord
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+def normalise_code(code):
+    # uppercase!
+    code = code.upper()
+
+    # convert spaces to dashes
+    code = code.replace(' ', '-')
+
+    return code
+
 
 # load up the error codes to respond to
 # yeah it's messy, whatever it works
-files = 'PS4'
+files = ['PS4']
 codes = {
     'PS4': {
-        'pattern': '([A-Z]{2}-[0-9]{5}-[0-9])',
+        'pattern': '([a-zA-Z]{2}[\- ][0-9]{5}[\- ][0-9])',
         'codes': [],
         'names': [],
         'notes': [],
@@ -22,7 +36,6 @@ for file in files:
             name = f"{row[1]} ({row[2]})" if row[1] and row[2] else row[1]
             codes[file]['names'].append(name)
             codes[file]['notes'].append(row[3])
-
 
 
 # setup the discord client
@@ -47,9 +60,16 @@ async def on_message(message):
         match = re.search(sd['pattern'], message.content)
         if match is not None:
             ec = match.group(0)
-            i = sd['codes'].index(ec)
-            response = f"Detected {system} error code {ec}, here's some info:\nName: {sd['names'][i] or 'Unnamed Error'}\nRemarks: {sd['notes'][i]}"
+            code = normalise_code(ec)
+            if code not in sd['codes']:
+                return
+
+            print(f"#{message.channel.name} <{message.author.name}> {system}:{code} - {message.content}")
+
+            i = sd['codes'].index(code)
+            response = f"Detected {system} error code {code}, here's some info:\nName: {sd['names'][i] or 'Unnamed Error'}\nRemarks: {sd['notes'][i]}"
             await message.channel.send(response)
 
-# insert token below
-client.run('')
+
+# start up the discord client
+client.run(os.getenv('DISCORD_TOKEN'))
