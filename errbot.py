@@ -4,6 +4,8 @@ import re
 import discord
 
 # load up the error codes to respond to
+# yeah it's messy, whatever it works
+files = 'PS4'
 codes = {
     'PS4': {
         'pattern': '([A-Z]{2}-[0-9]{5}-[0-9])',
@@ -12,13 +14,16 @@ codes = {
         'notes': [],
     }
 }
-with open('PS4.csv', newline='') as csvfile:
-    reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-    for row in reader:
-        codes['PS4']['codes'].append(row[0])
-        name = f"{row[1]} ({row[2]})" if row[1] and row[2] else row[1]
-        codes['PS4']['names'].append(name)
-        codes['PS4']['notes'].append(row[3])
+for file in files:
+    with open(f"{file}.csv", newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        for row in reader:
+            codes[file]['codes'].append(row[0])
+            name = f"{row[1]} ({row[2]})" if row[1] and row[2] else row[1]
+            codes[file]['names'].append(name)
+            codes[file]['notes'].append(row[3])
+
+
 
 # setup the discord client
 intents = discord.Intents.default()
