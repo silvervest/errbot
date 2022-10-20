@@ -1,4 +1,4 @@
-Error_code,Name,Return_code,Remarks
+code,name,return_code,notes
 CE-30001-4,SCE_KERNEL_ERROR_EPERM,0x80020001,Operation not permitted
 CE-30002-5,SCE_KERNEL_ERROR_ENOENT,0x80020002,No such file or directory
 CE-30003-6,SCE_KERNEL_ERROR_ESRCH,0x80020003,No such process

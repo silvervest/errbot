@@ -4,8 +4,8 @@ import re
 import discord
 from dotenv import load_dotenv
 import os
+import logging
 
-load_dotenv()
 
 def normalise_code(code):
     # uppercase!
@@ -17,59 +17,93 @@ def normalise_code(code):
     return code
 
 
-# load up the error codes to respond to
-# yeah it's messy, whatever it works
-files = ['PS4']
-codes = {
-    'PS4': {
-        'pattern': '([a-zA-Z]{2}[\- ][0-9]{5}[\- ][0-9])',
-        'codes': [],
-        'names': [],
-        'notes': [],
+def fetch_code_response(system, code):
+    code = normalise_code(code)
+    if system not in codes:
+        raise Exception(f"Invalid system called - {system}")
+
+    if code not in codes[system]['codes']:
+        raise Exception(f"Pattern matched for {system} but no code {code} found in DB")
+    
+    error = codes[system]['codes'][code]
+    response = (
+        f"Detected {system} error code {code}, here's some info:\n"
+        f"Name: {error['name'] or 'Unnamed Error'}\n"
+        f"Remarks: {error['notes']}"
+    )
+
+    return response
+
+
+def load_codes():
+    # load up the error codes to respond to
+    # yeah it's messy, whatever it works
+    codes = {
+        'PS4': {
+            'pattern': '([a-zA-Z]{2}[\- ][0-9]{5}[\- ][0-9])',
+            'codes': {},
+        },
+        'PS5': {
+            'pattern': '([a-zA-Z]{2}[\- ][0-9]{6}[\- ][0-9])',
+            'codes': {},
+        }
     }
-}
-for file in files:
-    with open(f"{file}.csv", newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        for row in reader:
-            codes[file]['codes'].append(row[0])
-            name = f"{row[1]} ({row[2]})" if row[1] and row[2] else row[1]
-            codes[file]['names'].append(name)
-            codes[file]['notes'].append(row[3])
-
-
-# setup the discord client
-intents = discord.Intents.default()
-intents.message_content = True
-
-client = discord.Client(intents=intents)
-
-@client.event
-async def on_ready():
-    print(f'We have logged in as {client.user}')
-
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-
-    # every single message the bot sees will run through the list of code to try to match a regex
-    # if we match on one, dig out the actual code and respond with a message
     for system in codes:
-        sd = codes[system]
-        match = re.search(sd['pattern'], message.content)
-        if match is not None:
-            ec = match.group(0)
-            code = normalise_code(ec)
-            if code not in sd['codes']:
-                return
+        with open(f"{system}.csv", newline='') as csvfile:
+            reader = csv.DictReader(csvfile, delimiter=',', quotechar='"')
+            names = reader.fieldnames
+            for row in reader:
+                code = row['code']
+                del row['code']
+                codes[system]['codes'][code] = row
 
-            print(f"#{message.channel.name} <{message.author.name}> {system}:{code} - {message.content}")
-
-            i = sd['codes'].index(code)
-            response = f"Detected {system} error code {code}, here's some info:\nName: {sd['names'][i] or 'Unnamed Error'}\nRemarks: {sd['notes'][i]}"
-            await message.channel.send(response)
+    return codes
 
 
-# start up the discord client
-client.run(os.getenv('DISCORD_TOKEN'))
+def boot_discord(codes):
+    # setup the discord client
+    intents = discord.Intents.default()
+    intents.message_content = True
+
+    client = discord.Client(intents=intents)
+
+    @client.event
+    async def on_ready():
+        print(f'We have logged in as {client.user}')
+
+    @client.event
+    async def on_message(message):
+        if message.author == client.user:
+            return
+
+        # every single message the bot sees will run through the list of code to try to match a regex
+        # if we match on one, dig out the actual code and respond with a message
+        for system in codes:
+            sd = codes[system]
+            match = re.search(sd['pattern'], message.content)
+            if match is not None:
+                code = match.group(0)
+
+                logging.info(f"#{message.channel.name} <{message.author.name}> {message.content}")
+                try:
+                    response = fetch_code_response(system, code)
+                    logging.info(response)
+                    await message.channel.send(response)
+                except Exception as err:
+                    logging.warning(err)
+
+    # start up the discord client
+    client.run(os.getenv('DISCORD_TOKEN'))
+
+
+if __name__ == "__main__":
+    load_dotenv()
+
+    logging.basicConfig(
+        format='%(asctime)s %(levelname)-8s %(message)s',
+        level=logging.INFO,
+        datefmt='%Y-%m-%d %H:%M:%S')
+
+    codes = load_codes()
+    boot_discord(codes)
+
