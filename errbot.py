@@ -82,10 +82,8 @@ def boot_discord(codes):
         # if we match on one, dig out the actual code and respond with a message
         for system in codes:
             sd = codes[system]
-            match = re.search(sd['pattern'], message.content)
-            if match is not None:
-                code = match.group(0)
-
+            matches = re.findall(sd['pattern'], message.content)
+            for code in matches:
                 logging.info(f"#{message.channel.name} <{message.author.name}> {message.content}")
                 try:
                     response = fetch_code_response(system, code)
