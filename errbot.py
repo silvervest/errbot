@@ -22,15 +22,17 @@ def fetch_code_response(system, code):
     if system not in codes:
         raise Exception(f"Invalid system called - {system}")
 
-    if code not in codes[system]['codes']:
-        raise Exception(f"Pattern matched for {system} but no code {code} found in DB")
-    
-    error = codes[system]['codes'][code]
     response = (
-        f"Detected {system} error code {code}, here's some info:\n"
-        f"Name: {error['name'] or 'Unnamed Error'}\n"
-        f"Remarks: {error['notes']}"
+        f"Detected {system} error code {code}, but unfortunately it's not fully known:\n"
+        f"If you have any info on it, please get in touch with admins!"
     )
+    if code in codes[system]['codes']:
+        error = codes[system]['codes'][code]
+        response = (
+            f"Detected {system} error code {code}, here's some info:\n"
+            f"Name: {error['name'] or 'Unnamed Error'}\n"
+            f"Remarks: {error['notes']}"
+        )
 
     return response
 
