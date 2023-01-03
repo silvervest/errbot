@@ -1185,7 +1185,7 @@ CE-34780-2,,,Operation results timed out
 CE-34781-3,,,Not initialized
 CE-34782-4,,,Library has been initialized
 CE-34783-5,,,Fatal error
-CE-34788-0,,,"This update file cannot be used. Connect a USB storage device that contains an update file for reinstallation for version 1.50 or later. // Delete the Update file from the USB storage device, and replace it with a valid one."
+CE-34788-0,,,"GEOM: da1: the primary GPT table is corrupt or invalid. GEOM: da1: using the secondary instead -- recovery strongly advised. GEOM: da1: done."
 CE-34861-2,,,"Connection to server failed // Step 1: If you have been able to connect to the Internet previously, PSN or the game's server may be temporarily unavailable. Please check the status of the game's server via its website.You can check the status of the PSN here. Step 2: If you have this error every time you try to connect to the Internet, check the SSL in your Internet environment and verify that SSL is available."
 CE-34876-8,,,This disc is not supported by the PS4.
 CE-34877-9,,,Cannot play PlayStation 3 format disc.
