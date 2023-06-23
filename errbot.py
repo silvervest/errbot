@@ -26,12 +26,15 @@ def fetch_code_response(system, code):
         f"Detected {system} error code {code}, but unfortunately it's not fully known:\n"
         f"If you have any info on it, please get in touch with admins!"
     )
-    if code in codes[system]['codes']:
+    if code in codes[system]['codes'] and codes[system]['codes'][code]['name'] != '':
         error = codes[system]['codes'][code]
+        notes = error['notes']
+        if notes == '':
+            notes = 'Not much known on this error - if you have any info on it, please get in touch with admins!'
         response = (
             f"Detected {system} error code {code}, here's some info:\n"
             f"Name: {error['name'] or 'Unnamed Error'}\n"
-            f"Remarks: {error['notes']}"
+            f"Remarks: {notes}"
         )
 
     return response
@@ -49,7 +52,7 @@ def load_codes():
         'PS5': {
             'pattern': '((?:CE|NP|NW|SU|WB|WS|WV)[\- ][0-9]{6}[\- ][0-9])',
             'codes': {},
-            'channel': 'general',
+            'channel': 'ps5',
         }
     }
     for system in codes:
