@@ -42,12 +42,14 @@ def load_codes():
     # yeah it's messy, whatever it works
     codes = {
         'PS4': {
-            'pattern': '([a-zA-Z]{2}[\- ][0-9]{5}[\- ][0-9])',
+            'pattern': '((?:CE|NP|NW|SU|WB|WC|WS|WV)[\- ][0-9]{5}[\- ][0-9])',
             'codes': {},
+            'channel': 'ps4',
         },
         'PS5': {
-            'pattern': '([a-zA-Z]{2}[\- ][0-9]{6}[\- ][0-9])',
+            'pattern': '((?:CE|NP|NW|SU|WB|WS|WV)[\- ][0-9]{6}[\- ][0-9])',
             'codes': {},
+            'channel': 'general',
         }
     }
     for system in codes:
@@ -81,6 +83,9 @@ def boot_discord(codes):
         # every single message the bot sees will run through the list of code to try to match a regex
         # if we match on one, dig out the actual code and respond with a message
         for system in codes:
+            if codes[system]['channel'] != message.channel.name:
+                continue
+
             sd = codes[system]
             matches = re.findall(sd['pattern'], message.content)
             for code in matches:
