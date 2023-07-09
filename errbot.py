@@ -90,7 +90,7 @@ def boot_discord(codes):
                 continue
 
             sd = codes[system]
-            matches = re.findall(sd['pattern'], message.content)
+            matches = re.findall(sd['pattern'], message.content, re.IGNORECASE)
             for code in matches:
                 logging.info(f"#{message.channel.name} <{message.author.name}> {message.content}")
                 try:
