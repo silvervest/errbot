@@ -1,4 +1,5 @@
 code,name,return_code,notes
+CE-120640-3,,N/A,"Corrupt SSD - Swap or Replace",
 CE-100001-2,,0x80020001,
 CE-100002-3,,0x80020002,
 CE-100003-4,,0x80020003,
