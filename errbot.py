@@ -28,7 +28,7 @@ def fetch_code_response(system, code):
     )
     if code in codes[system]['codes'] and codes[system]['codes'][code]['name'] != '':
         error = codes[system]['codes'][code]
-        notes = error['notes']
+        notes = error['notes'].replace("\\n", "\n")
         if notes == '':
             notes = 'Not much known on this error - if you have any info on it, please get in touch with admins!'
         response = (
