@@ -8682,7 +8682,7 @@ CE-108258-4,SCE_SHELL_UTIL_ERROR_DISC_UNRECOGNIZED,0x80BA000F,
 CE-108259-5,SCE_SHELL_UTIL_ERROR_NO_APPLICATION,0x80BA0010,
 CE-108260-7,SCE_SHELL_UTIL_ERROR_UNSUPPORTED_TV_DETECTED_WHILE_RUNNING,0x80BA0011,
 CE-108261-8,SCE_SHELL_UTIL_ERROR_ERROR_DIALOG_SUPPORT_ACTION_USER_NOT_FOUND,0x80BA0012,
-CE-108262-9,SCE_SHELL_UTIL_ERROR_SYSTEM_CRASH,0x80BA0013,
+CE-108262-9,SCE_SHELL_UTIL_ERROR_SYSTEM_CRASH,0x80BA0013,"Crashing (powerloss) during gameplay or on game startup (works fine in menus)\nI used my thermal camera to look at the RAM, GDDR6 - 7 was sitting about 10°C above the other RAM\nI swapped that RAM and the console worked (sent back to customer, still working a week later). I used Amaoe Senticil with solder paste.\nI beleive this error is cause by RAM that fails under stress, there may be other ways to diagnose. This is my third console I have been able to with this error code. All have been RAM.\nhttps://discord.com/channels/754165317961383997/970154983167254589/1215503323889664022"
 CE-108263-0,SCE_SHELL_UTIL_ERROR_SOMETHING_CRASH,0x80BA0014,
 CE-108264-1,SCE_SHELL_UTIL_ERROR_APPLICATION_CRASH_ABNORMAL_TERMINATION_REQUEST,0x80BA0015,
 CE-108265-2,SCE_SHELL_UTIL_ERROR_MANDATORY_PATCH_IS_DOWNLOADING_IN_NOTIFICATION_LIST,0x80BA0016,
