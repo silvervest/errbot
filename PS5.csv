@@ -1,14 +1,14 @@
 code,name,return_code,notes
 CE-120640-3,,N/A,Corrupt SSD - Swap or Replace
 CE-100001-2,SCE_KERNEL_ERROR_EPERM,0x80020001,Failed To Update The Application 
-CE-100002-3,SCE_KERNEL_ERROR_ENOENT                                                                                                                                                               ,0x80020002,
+CE-100002-3,SCE_KERNEL_ERROR_ENOENT ,0x80020002,
 CE-100003-4,SCE_KERNEL_ERROR_ESRCH,0x80020003,
 CE-100004-5,SCE_KERNEL_ERROR_EINTR,0x80020004,The Game Or Application Can’t Load 
-CE-100005-6,SCE_KERNEL_ERROR_EIO                                                                                                                                                                  ,0x80020005,The External Storage Drive Cannot Be Recognized 
-CE-100006-7,SCE_KERNEL_ERROR_ENXIO                                                                                                                                                                ,0x80020006,
+CE-100005-6,SCE_KERNEL_ERROR_EIO    ,0x80020005,The External Storage Drive Cannot Be Recognized 
+CE-100006-7,SCE_KERNEL_ERROR_ENXIO  ,0x80020006,
 CE-100007-8,SCE_KERNEL_ERROR_E2BIG,0x80020007,
 CE-100008-9,SCE_KERNEL_ERROR_ENOEXEC,0x80020008,There Was An Issue With The Update File 
-CE-100009-0,SCE_KERNEL_ERROR_EBADF                                                                                                                                                                ,0x80020009,
+CE-100009-0,SCE_KERNEL_ERROR_EBADF  ,0x80020009,
 CE-100010-2,SCE_KERNEL_ERROR_ECHILD,0x8002000A,
 CE-100011-3,SCE_KERNEL_ERROR_EDEADLK,0x8002000B,
 CE-100012-4,SCE_KERNEL_ERROR_ENOMEM,0x8002000C,
@@ -27,7 +27,7 @@ CE-100024-7,SCE_KERNEL_ERROR_EMFILE,0x80020018,
 CE-100025-8,SCE_KERNEL_ERROR_ENOTTY,0x80020019,
 CE-100026-9,SCE_KERNEL_ERROR_ETXTBSY,0x8002001A,
 CE-100027-0,SCE_KERNEL_ERROR_EFBIG,0x8002001B,There Is Not Enough Free Space On The SSD 
-CE-100028-1,SCE_KERNEL_ERROR_ENOSPC                                                                                                                                                               ,0x8002001C,
+CE-100028-1,SCE_KERNEL_ERROR_ENOSPC ,0x8002001C,
 CE-100029-2,SCE_KERNEL_ERROR_ESPIPE,0x8002001D,
 CE-100030-4,SCE_KERNEL_ERROR_EROFS,0x8002001E,
 CE-100031-5,SCE_KERNEL_ERROR_EMLINK,0x8002001F,
@@ -2293,7 +2293,7 @@ NW-102212-8,SCE_NET_ERROR_ENOMEM,0x8041010C,
 NW-102213-9,SCE_NET_ERROR_EACCES,0x8041010D,
 NW-102214-0,SCE_NET_ERROR_EFAULT,0x8041010E,
 NW-102215-1,SCE_NET_ERROR_ENOTBLK,0x8041010F,An Error Occurred While Connecting To Playstation Network 
-NW-102216-2,SCE_NET_ERROR_EBUSY                                                                                                                                                                   ,0x80410110,
+NW-102216-2,SCE_NET_ERROR_EBUSY     ,0x80410110,
 NW-102217-3,SCE_NET_ERROR_EEXIST,0x80410111,
 NW-102218-4,SCE_NET_ERROR_EXDEV,0x80410112,
 NW-102219-5,SCE_NET_ERROR_ENODEV,0x80410113,
@@ -2331,7 +2331,7 @@ NW-102250-0,SCE_NET_ERROR_EADDRINUSE,0x80410132,
 NW-102251-1,SCE_NET_ERROR_EADDRNOTAVAIL,0x80410133,
 NW-102252-2,SCE_NET_ERROR_ENETDOWN,0x80410134,
 NW-102253-3,SCE_NET_ERROR_ENETUNREACH,0x80410135,Unable To Connect To The Server 
-NW-102254-4,SCE_NET_ERROR_ENETRESET                                                                                                                                                               ,0x80410136,
+NW-102254-4,SCE_NET_ERROR_ENETRESET ,0x80410136,
 NW-102255-5,SCE_NET_ERROR_ECONNABORTED,0x80410137,
 NW-102256-6,SCE_NET_ERROR_ECONNRESET,0x80410138,
 NW-102257-7,SCE_NET_ERROR_ENOBUFS,0x80410139,
