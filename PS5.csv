@@ -94,8 +94,8 @@ CE-100091-1,SCE_KERNEL_ERROR_EBADMSG,0x8002005B,
 CE-100092-2,SCE_KERNEL_ERROR_EMULTIHOP,0x8002005C,
 CE-100093-3,SCE_KERNEL_ERROR_ENOLINK,0x8002005D,
 CE-100094-4,SCE_KERNEL_ERROR_EPROTO,0x8002005E,There Was An Issue When Starting The Application 
-CE-100095-5,SCE_KERNEL_ERROR_ENOTCAPABLE                                                                                                                                                          ,0x8002005F,There Was A Problem Loading The Application 
-CE-100096-6,SCE_KERNEL_ERROR_ECAPMODE                                                                                                                                                             ,0x80020060,
+CE-100095-5,SCE_KERNEL_ERROR_ENOTCAPABLE ,0x8002005F,There Was A Problem Loading The Application 
+CE-100096-6,SCE_KERNEL_ERROR_ECAPMODE    ,0x80020060,
 CE-100097-7,SCE_KERNEL_ERROR_ENOBLK,0x80020061,
 CE-100098-8,SCE_KERNEL_ERROR_EICV,0x80020062,
 CE-100099-9,SCE_KERNEL_ERROR_ENOPLAYGOENT,0x80020063,
@@ -2338,11 +2338,11 @@ NW-102257-7,SCE_NET_ERROR_ENOBUFS,0x80410139,
 NW-102258-8,SCE_NET_ERROR_EISCONN,0x8041013A,
 NW-102259-9,SCE_NET_ERROR_ENOTCONN,0x8041013B,
 NW-102260-1,SCE_NET_ERROR_ESHUTDOWN,0x8041013C,Unable To Connect To The Server 
-NW-102261-2,SCE_NET_ERROR_ETOOMANYREFS                                                                                                                                                            ,0x8041013D,
+NW-102261-2,SCE_NET_ERROR_ETOOMANYREFS   ,0x8041013D,
 NW-102262-3,SCE_NET_ERROR_ETIMEDOUT,0x8041013E,
 NW-102263-4,SCE_NET_ERROR_ECONNREFUSED,0x8041013F,
 NW-102264-5,SCE_NET_ERROR_ELOOP,0x80410140,Unable To Connect To The Server 
-NW-102265-6,SCE_NET_ERROR_ENAMETOOLONG                                                                                                                                                            ,0x80410141,
+NW-102265-6,SCE_NET_ERROR_ENAMETOOLONG   ,0x80410141,
 NW-102266-7,SCE_NET_ERROR_EHOSTDOWN,0x80410142,
 NW-102267-8,SCE_NET_ERROR_EHOSTUNREACH,0x80410143,
 NW-102268-9,SCE_NET_ERROR_ENOTEMPTY,0x80410144,
@@ -2384,15 +2384,15 @@ NW-102303-9,SCE_NET_ERROR_ENOALLOCMEM,0x804101DD,
 NW-102304-0,SCE_NET_ERROR_RESOLVER_EINTERNAL,0x804101DE,
 NW-102305-1,SCE_NET_ERROR_RESOLVER_EBUSY,0x804101DF,
 NW-102306-2,SCE_NET_ERROR_RESOLVER_ENOSPACE,0x804101E0,A Communication Error Has Occurred While Connecting To Playstation Network 
-NW-102307-3,SCE_NET_ERROR_RESOLVER_EPACKET                                                                                                                                                        ,0x804101E1,A Communication Error Has Occurred 
-NW-102308-4,SCE_NET_ERROR_RESOLVER_ERESERVED224                                                                                                                                                   ,0x804101E2,
+NW-102307-3,SCE_NET_ERROR_RESOLVER_EPACKET ,0x804101E1,A Communication Error Has Occurred 
+NW-102308-4,SCE_NET_ERROR_RESOLVER_ERESERVED224 ,0x804101E2,
 NW-102309-5,SCE_NET_ERROR_RESOLVER_ENODNS,0x804101E3,
 NW-102310-7,SCE_NET_ERROR_RESOLVER_ETIMEDOUT,0x804101E4,
 NW-102311-8,SCE_NET_ERROR_RESOLVER_ENOSUPPORT,0x804101E5,
 NW-102312-9,SCE_NET_ERROR_RESOLVER_EFORMAT,0x804101E6,
 NW-102313-0,SCE_NET_ERROR_RESOLVER_ESERVERFAILURE,0x804101E7,A Communication Error Has Occurred While Connecting To Playstation Network 
-NW-102314-1,SCE_NET_ERROR_RESOLVER_ENOHOST                                                                                                                                                        ,0x804101E8,A Communication Error Has Occurred 
-NW-102315-2,SCE_NET_ERROR_RESOLVER_ENOTIMPLEMENTED                                                                                                                                                ,0x804101E9,
+NW-102314-1,SCE_NET_ERROR_RESOLVER_ENOHOST ,0x804101E8,A Communication Error Has Occurred 
+NW-102315-2,SCE_NET_ERROR_RESOLVER_ENOTIMPLEMENTED ,0x804101E9,
 NW-102316-3,SCE_NET_ERROR_RESOLVER_ESERVERREFUSED,0x804101EA,
 NW-102317-4,SCE_NET_ERROR_RESOLVER_ENORECORD,0x804101EB,
 NW-102318-5,SCE_NET_ERROR_RESOLVER_EALIGNMENT,0x804101EC,
@@ -2456,7 +2456,7 @@ NW-102375-8,SCE_NET_ERROR_DHCP_BUSY,0x8041150E,
 NW-102376-9,SCE_NET_ERROR_DHCP_INVALID_VENDOR_ID,0x80411601,
 NW-102377-0,SCE_NET_ERROR_DHCP_RECV_FAILED,0x80411602,
 NW-102378-1,SCE_NET_ERROR_CONFIG_WLAN_JOIN_NOT_FOUND,0x80411603,There Was An Error When Connecting To Playstation Network
-NW-102379-2,SCE_NET_ERROR_CONFIG_WLAN_JOIN_AUTH_PROTO_MISMATCH                                                                                                                                    ,0x80411604,
+NW-102379-2,SCE_NET_ERROR_CONFIG_WLAN_JOIN_AUTH_PROTO_MISMATCH ,0x80411604,
 NW-102380-4,SCE_NET_ERROR_CONFIG_WLAN_JOIN_AUTH_REFUSED,0x80411605,
 NW-102381-5,SCE_NET_ERROR_CONFIG_WLAN_JOIN_ASSOC_RESP_TIMEOUT,0x80411606,
 NW-102382-6,SCE_NET_ERROR_CONFIG_WLAN_JOIN_AUTH_RESP_TIMEOUT,0x80411607,
@@ -2494,7 +2494,7 @@ NW-102413-1,SCE_NET_CTL_ERROR_INVALID_ID,0x80412107,
 NW-102414-2,SCE_NET_CTL_ERROR_INVALID_CODE,0x80412108,
 NW-102415-3,SCE_NET_CTL_ERROR_INVALID_ADDR,0x80412109,
 NW-102416-4,SCE_NET_CTL_ERROR_NOT_CONNECTED,0x8041210D,The connection to the network has timed out 
-NW-102417-5,SCE_NET_CTL_ERROR_NOT_AVAIL                                                                                                                                                           ,0x8041210E,
+NW-102417-5,SCE_NET_CTL_ERROR_NOT_AVAIL  ,0x8041210E,
 NW-102418-6,SCE_NET_CTL_ERROR_NETWORK_DISABLED,0x8041210F,
 NW-102419-7,SCE_NET_CTL_ERROR_DISCONNECT_REQ,0x80412111,
 NW-102420-9,SCE_NET_CTL_ERROR_INVALID_TYPE,0x80412115,
@@ -8956,21 +8956,21 @@ CE-108538-5,SCE_VDEC_CORE_ERROR_INPUT_STREAM,0x80C00014,
 CE-108539-6,SCE_VDEC_CORE_ERROR_RESET_DATA,0x80C00015,
 CE-108540-8,SCE_VDEC_CORE_ERROR_MAP_COUNT,0x80C00016,
 CE-108541-9,SCE_VDEC_CORE_ERROR_COMPUTE_PIPE_IDBad SSD Controller,0x80C10000,Bad SSD Controller
-CE-108542-0,SCE_VIDEODEC_ERROR_API_FAIL                                                                                                                                                           ,0x80C10001,Bad SSD Controller
-CE-108543-1,SCE_VIDEODEC_ERROR_CODEC_TYPE                                                                                                                                                         ,0x80C10002,Bad SSD Controller
-CE-108544-2,SCE_VIDEODEC_ERROR_STRUCT_SIZE                                                                                                                                                        ,0x80C10003,Bad SSD Controller
-CE-108545-3,SCE_VIDEODEC_ERROR_HANDLE                                                                                                                                                             ,0x80C10004,Bad SSD Controller
-CE-108546-4,SCE_VIDEODEC_ERROR_CPU_MEMORY_SIZE                                                                                                                                                    ,0x80C10005,Bad SSD Controller
-CE-108547-5,SCE_VIDEODEC_ERROR_CPU_MEMORY_POINTER                                                                                                                                                 ,0x80C10006,Bad SSD Controller
-CE-108548-6,SCE_VIDEODEC_ERROR_CPU_GPU_MEMORY_SIZE                                                                                                                                                ,0x80C10007,Bad SSD Controller
-CE-108549-7,SCE_VIDEODEC_ERROR_CPU_GPU_MEMORY_POINTER                                                                                                                                             ,0x80C10008,Bad SSD Controller
-CE-108550-9,SCE_VIDEODEC_ERROR_SHADER_CONTEXT_POINTER                                                                                                                                             ,0x80C10009,Bad SSD Controller
-CE-108551-0,SCE_VIDEODEC_ERROR_AU_SIZE                                                                                                                                                            ,0x80C1000A,Bad SSD Controller
-CE-108552-1,SCE_VIDEODEC_ERROR_AU_POINTER                                                                                                                                                         ,0x80C1000B,Bad SSD Controller
-CE-108553-2,SCE_VIDEODEC_ERROR_FRAME_BUFFER_SIZE                                                                                                                                                  ,0x80C1000C,Bad SSD Controller
-CE-108554-3,SCE_VIDEODEC_ERROR_FRAME_BUFFER_POINTER                                                                                                                                               ,0x80C1000D,Bad SSD Controller
-CE-108555-4,SCE_VIDEODEC_ERROR_FRAME_BUFFER_ALIGNMENT                                                                                                                                             ,0x80C1000E,Bad SSD Controller
-CE-108556-5,SCE_VIDEODEC_ERROR_CONFIG_INFO                                                                                                                                                        ,0x80C1000F,
+CE-108542-0,SCE_VIDEODEC_ERROR_API_FAIL  ,0x80C10001,Bad SSD Controller
+CE-108543-1,SCE_VIDEODEC_ERROR_CODEC_TYPE ,0x80C10002,Bad SSD Controller
+CE-108544-2,SCE_VIDEODEC_ERROR_STRUCT_SIZE ,0x80C10003,Bad SSD Controller
+CE-108545-3,SCE_VIDEODEC_ERROR_HANDLE    ,0x80C10004,Bad SSD Controller
+CE-108546-4,SCE_VIDEODEC_ERROR_CPU_MEMORY_SIZE ,0x80C10005,Bad SSD Controller
+CE-108547-5,SCE_VIDEODEC_ERROR_CPU_MEMORY_POINTER ,0x80C10006,Bad SSD Controller
+CE-108548-6,SCE_VIDEODEC_ERROR_CPU_GPU_MEMORY_SIZE ,0x80C10007,Bad SSD Controller
+CE-108549-7,SCE_VIDEODEC_ERROR_CPU_GPU_MEMORY_POINTER ,0x80C10008,Bad SSD Controller
+CE-108550-9,SCE_VIDEODEC_ERROR_SHADER_CONTEXT_POINTER ,0x80C10009,Bad SSD Controller
+CE-108551-0,SCE_VIDEODEC_ERROR_AU_SIZE   ,0x80C1000A,Bad SSD Controller
+CE-108552-1,SCE_VIDEODEC_ERROR_AU_POINTER ,0x80C1000B,Bad SSD Controller
+CE-108553-2,SCE_VIDEODEC_ERROR_FRAME_BUFFER_SIZE ,0x80C1000C,Bad SSD Controller
+CE-108554-3,SCE_VIDEODEC_ERROR_FRAME_BUFFER_POINTER ,0x80C1000D,Bad SSD Controller
+CE-108555-4,SCE_VIDEODEC_ERROR_FRAME_BUFFER_ALIGNMENT ,0x80C1000E,Bad SSD Controller
+CE-108556-5,SCE_VIDEODEC_ERROR_CONFIG_INFO ,0x80C1000F,
 CE-108557-6,SCE_PARTITION_FORMATTER_ERROR_GENERAL,0x80C20000,
 CE-108558-7,SCE_PARTITION_FORMATTER_ERROR_INVAL,0x80C20001,
 CE-108559-8,SCE_PARTITION_FORMATTER_ERROR_NOMEM,0x80C20002,
@@ -11826,7 +11826,7 @@ CE-111157-6,SCE_VR_TRACKER_ERROR_NOT_EXECUTE_GPU_WAIT,0x81260816,
 CE-111158-7,SCE_VR_TRACKER_ERROR_UPDATE_HMD_MOTION_SENSOR_DATA,0x81260817,
 CE-111159-8,SCE_VR_TRACKER_ERROR_UPDATE_DS4_MOTION_SENSOR_DATA,0x81260818,
 CE-111160-0,SCE_VR_TRACKER_ERROR_UPDATE_MOVE_MOTION_SENSOR_DATA,0x81260819,Please check the connection status of HD camera and PS Camera 
-CE-111161-1,SCE_VR_TRACKER_ERROR_CAMERA_ADJUSTMENT_IS_NECESSARY                                                                                                                                   ,0x8126081A,
+CE-111161-1,SCE_VR_TRACKER_ERROR_CAMERA_ADJUSTMENT_IS_NECESSARY ,0x8126081A,
 CE-111162-2,SCE_VR_TRACKER_ERROR_NOT_EXECUTE_CPU_PROCESS,0x8126081B,
 CE-111163-3,SCE_VR_TRACKER_ERROR_NOT_STARTED,0x8126081C,
 CE-111164-4,SCE_VR_TRACKER_ERROR_INVALID_CPU_MODE,0x8126081D,
